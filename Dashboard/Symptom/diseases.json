@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Common Cold",
+    "keywords": ["cold", "runny nose", "sneeze", "cough"],
+    "do": ["Warm fluids piye", "Rest le", "Steam inhale kare"],
+    "dont": ["Cold drinks na piye", "Over-exertion na kare"],
+    "diet": ["Soup", "Herbal tea", "Fruits"],
+    "home": ["Steam", "Haldi milk"],
+    "emergency": false
+  },
+  {
+    "name": "Flu (Viral Fever)",
+    "keywords": ["fever", "body pain", "chills", "weakness"],
+    "do": ["Rest le", "Paracetamol le", "Hydration rakhe"],
+    "dont": ["Bahut thand me na jaye"],
+    "diet": ["Dal", "Rice", "Soup"],
+    "home": ["Lukewarm water", "Tulsi kadha"],
+    "emergency": false
+  },
+  {
+    "name": "Migraine",
+    "keywords": ["headache", "nausea", "light sensitivity"],
+    "do": ["Dark room me rest", "Painkiller (doctor se pooch kar)"],
+    "dont": ["Screen time kam kare"],
+    "diet": ["Light food"],
+    "home": ["Cold compress"],
+    "emergency": false
+  },
+  {
+    "name": "Food Poisoning",
+    "keywords": ["vomiting", "loose motion", "stomach pain"],
+    "do": ["ORS piye", "Rest le"],
+    "dont": ["Outside food avoid kare"],
+    "diet": ["Banana", "Rice", "Curd"],
+    "home": ["Jeera water"],
+    "emergency": false
+  },
+  {
+    "name": "Dehydration",
+    "keywords": ["weakness", "dry mouth", "dizziness"],
+    "do": ["Pani piye", "ORS le"],
+    "dont": ["Alcohol na piye"],
+    "diet": ["Fruits", "Coconut water"],
+    "home": ["Salt-sugar water"],
+    "emergency": false
+  },
+  {
+    "name": "Acidity",
+    "keywords": ["acidity", "burning chest", "gas"],
+    "do": ["Small meals le"],
+    "dont": ["Spicy food avoid"],
+    "diet": ["Milk", "Banana"],
+    "home": ["Cold milk"],
+    "emergency": false
+  },
+  {
+    "name": "Throat Infection",
+    "keywords": ["sore throat", "pain while swallowing"],
+    "do": ["Gargle kare"],
+    "dont": ["Cold drinks na piye"],
+    "diet": ["Warm soup"],
+    "home": ["Salt water gargle"],
+    "emergency": false
+  },
+  {
+    "name": "Allergy",
+    "keywords": ["itching", "rashes", "sneezing"],
+    "do": ["Allergen avoid"],
+    "dont": ["Dust exposure"],
+    "diet": ["Simple food"],
+    "home": ["Cold compress"],
+    "emergency": false
+  },
+  {
+    "name": "Anxiety",
+    "keywords": ["anxiety", "panic", "restlessness"],
+    "do": ["Deep breathing", "Relaxation"],
+    "dont": ["Overthinking"],
+    "diet": ["Light food"],
+    "home": ["Meditation"],
+    "emergency": false
+  },
+  {
+    "name": "High Blood Pressure",
+    "keywords": ["high bp", "headache", "stress"],
+    "do": ["BP check kare"],
+    "dont": ["Salt kam kare"],
+    "diet": ["Low salt food"],
+    "home": ["Morning walk"],
+    "emergency": false
+  },
+
+  {
+    "name": "Chest Pain (Possible Heart Issue)",
+    "keywords": ["chest pain", "tightness", "left arm pain"],
+    "do": ["Turant medical help le"],
+    "dont": ["Ignore na kare"],
+    "diet": [],
+    "home": [],
+    "emergency": true
+  },
+
+  {
+    "name": "Breathing Problem",
+    "keywords": ["breathing problem", "shortness of breath"],
+    "do": ["Emergency service call kare"],
+    "dont": [],
+    "diet": [],
+    "home": [],
+    "emergency": true
+  }
+]

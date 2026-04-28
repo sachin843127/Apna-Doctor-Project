@@ -1,0 +1,123 @@
+/* Symptom Page Wrapper */
+.symptom-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(15, 118, 110, 0.08);
+  max-width: 100%;
+}
+
+/* Headings */
+.symptom-title {
+  color: #0f766e;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.symptom-subtitle {
+  color: #475569;
+  margin-bottom: 14px;
+}
+
+/* Input */
+#symptomInput {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #ccfbf1;
+  background: #f0fdfa;
+  resize: none;
+  font-size: 15px;
+}
+
+/* Button */
+#checkSymptomBtn {
+  margin-top: 14px;
+  background: #0f766e;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#checkSymptomBtn:hover {
+  background: #115e59;
+}
+
+/* Result Cards */
+.result-card {
+  margin-top: 20px;
+  padding: 14px;
+  background: #f0fdfa;
+  border-radius: 14px;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+/* Grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+/* Info Cards */
+.info-card {
+  background: #ffffff;
+  border: 1px solid #ccfbf1;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.info-card h4 {
+  color: #0f766e;
+  margin-bottom: 6px;
+}
+
+/* Emergency */
+.emergency {
+  margin-top: 18px;
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 12px;
+  border-radius: 14px;
+  font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
+
+/* #followUpBox {
+  margin-top: 20px;
+  background: #ecfeff;
+  border: 1px solid #67e8f9;
+  padding: 14px;
+  border-radius: 14px;
+}
+
+#followUpQuestion {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #0f766e;
+}
+
+#followUpInput {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #99f6e4;
+  margin-bottom: 10px;
+}
+
+#sendFollowUpBtn {
+  background: #0f766e;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+} */

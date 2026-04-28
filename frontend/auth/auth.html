@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Apna Doctor | Login</title>
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+
+<div class="auth-container">
+  <div class="auth-card">
+
+    <!-- LEFT -->
+    <div class="auth-left">
+      <h2 id="formTitle">Login</h2>
+
+      <form id="authForm">
+        <input type="text" id="name" placeholder="Full Name" class="hidden" />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+
+        <button type="submit" id="submitBtn">Login</button>
+      </form>
+
+      <p class="toggle-text">
+        <span id="toggleText">New user?</span>
+        <a href="#" id="toggleBtn">Create Account</a>
+      </p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="auth-right">
+      <h1>Apna Doctor</h1>
+      <p>AI Powered Health Assistant</p>
+    </div>
+
+  </div>
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>

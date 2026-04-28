@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  /* background: linear-gradient(135deg, #0f7a76, #63c9bd); */
+  background: linear-gradient(135deg, #e0f1f0, #cdf6f1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-card {
+  width: 850px;
+  height: 420px;
+  background: #fff;
+  border-radius: 16px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.auth-left {
+  flex: 1;
+  padding: 40px;
+}
+
+.auth-left h2 {
+  margin-bottom: 20px;
+  color: #1aa99b;
+}
+
+.auth-left input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.auth-left button {
+  width: 100%;
+  padding: 12px;
+  background: #1aa99b;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toggle-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.toggle-text a {
+  color: #1aa99b;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-right {
+  flex: 1;
+  background: linear-gradient(135deg, #1aa99b, #63c9bd);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apna Doctor - Dashboard</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="symptom/symptom.css">
+
+</head>
+
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <h1><span class="brand-bold">Apna</span> Doctor</h1>
+        <p class="tag"> AI-powered Health Assistant</p>
+      </div>
+
+      <nav class="nav">
+        <ul>
+          <li class="nav-item active" data-view="dashboard"><span class="icon">🏠</span> Dashboard</li>
+          <!-- <li class="nav-item" data-view="login"><span class="icon">🔐</span> Login</li> -->
+          <li class="nav-item" data-view="symptom"><span class="icon">🩺</span> Symptom Check</li>
+          <li class="nav-item" data-view="records"><span class="icon">📁</span> My Records</li>
+          <li class="nav-item" data-view="locator"><span class="icon">📍</span> Hospital Locator</li>
+          <li class="nav-item" data-view="profile"><span class="icon">👤</span> Profile</li>
+          <li class="nav-item" data-view="medicine"><span class="icon">💬</span> Doctor Chat</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="profile">
+          <img src="Assets/logo.jpeg " class="avatar" />
+          <span id="topUserName" style="color:white;font-weight:600"></span>
+          <button id="logoutBtn" class="btn">Logout</button>
+
+
+
+        </div>
+        <div class="search-wrap">
+          <input type="search" id="search" placeholder="Search..." />
+          <button id="searchBtn" aria-label="Search">🔍</button>
+        </div>
+      </header>
+
+      <!-- Views / Pages -->
+      <section class="view" id="dashboardView">
+        <!-- <h2 class="greet">Hello Priya, how you you feeling today?</h2> -->
+        <h2 class="greet" id="greetText"></h2>
+
+
+        <div class="cards-grid">
+          <div class="card large">
+            <div class="card-icon large-card">🩺</div>
+            <h3>Start Symptom Check</h3>
+            <p class="card-desc">Detect possible diseases based on symptoms.</p>
+            <button class="btn btn-primary" id="startSymptomBtn">Start Symptom Check</button>
+            <!-- <a href="Symptoms-check/index.html" class="btn btn-primary">Start Symptom Check</a> -->
+          </div>
+
+          <div class="card">
+            <div class="card-icon">📁</div>
+            <h3>My Records</h3>
+            <p class="card-desc">View saved health records.</p>
+            <button class="btn" data-action="open" data-target="records">Open Records</button>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🏥</div>
+            <h3>Hospital Locator</h3>
+            <p class="card-desc">Find nearby hospitals & clinics.</p>
+            <button class="btn" data-action="open" data-target="locator">Locate</button>
+          </div>
+
+          <!-- <div class="card">
+            <div class="card-icon">🧾</div>
+            <h3>My Records</h3>
+            <p class="card-desc">History & previous diagnoses.</p>
+            <button class="btn" data-action="open" data-target="records">Open</button>
+          </div> -->
+
+          <div class="card">
+            <div class="card-icon">💬</div>
+            <h3>Doctor Chat</h3>
+            <p class="card-desc">Chat with AI doctor assistant.</p>
+            <button class="btn" data-action="open" data-target="medicine">Open Chat</button>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">👤</div>
+            <h3>Profile</h3>
+            <p class="card-desc">View your account details.</p>
+            <button class="btn" data-action="open" data-target="profile">Open Profile</button>
+          </div>
+        </div>
+
+        <h4 class="tips-title">Health & Prevention Tips</h4>
+        <div class="tips-row">
+          <div class="tip">💧 Drink warm water</div>
+          <div class="tip">😴 Get enough sleep</div>
+          <div class="tip">🍎 Eat healthy</div>
+          <div class="tip">🚶 Walk daily</div>
+        </div>
+
+        <footer class="app-footer">Apna Doctor - Disease Detector & Assistant | Designed for Web</footer>
+      </section>
+
+      <!-- Login View -->
+
+      <section class="view hidden" id="loginView">
+        <div class="card form-card">
+          <h3>Login</h3>
+          <form id="loginForm" class="form">
+            <label for="email">Email</label>
+            <input id="email" type="email" required placeholder="you@example.com" />
+
+            <label for="password">Password</label>
+            <input id="password" type="password" required placeholder="••••••" />
+
+            <button class="btn btn-primary" type="submit">Login</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Symptom View -->
+
+      <section class="view hidden" id="symptomView">
+
+        <div class="symptom-card">
+          <h2 class="symptom-title">🩺 Symptom Checker</h2>
+          <p class="symptom-subtitle">
+            Write your problem, we will provide basic medical guidance.
+          </p>
+
+          <textarea id="symptomInput" placeholder="Jaise: mujhe bukhar aur sar dard hai..."></textarea>
+
+          <button id="checkSymptomBtn">Analyze Symptoms</button>
+
+          <div id="symptomOutput" class="hidden">
+            <div class="result-card">
+              <h3>🧠 Possible Condition</h3>
+              <p id="diseaseText"></p>
+            </div>
+
+            <div class="grid-2">
+              <div class="info-card">
+                <h4>✅ Kya Kare</h4>
+                <ul id="doList"></ul>
+              </div>
+
+              <div class="info-card">
+                <h4>❌ Kya Na Kare</h4>
+                <ul id="dontList"></ul>
+              </div>
+
+              <div class="info-card">
+                <h4>🥗 Diet</h4>
+                <ul id="dietList"></ul>
+              </div>
+
+              <div class="info-card">
+                <h4>🏠 Home Remedies</h4>
+                <ul id="homeList"></ul>
+              </div>
+            </div>
+
+
+
+
+            <div id="emergencyBox" class="emergency hidden">
+              🚨 <b>Emergency Alert:</b> Please contact a doctor or hospital immediately.
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <div class="card form-card">
+          <h3>Symptom Checker</h3>
+          <form id="symptomForm" class="form">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" required />
+
+            <label for="age">Age</label>
+            <input id="age" type="number" placeholder="Age" required min="0" max="120" />
+
+            <label>Choose Symptoms</label>
+            <div class="symptoms-grid">
+              <label><input type="checkbox" name="symptom" value="fever" /> Fever</label>
+              <label><input type="checkbox" name="symptom" value="cough" /> Cough</label>
+              <label><input type="checkbox" name="symptom" value="headache" /> Headache</label>
+              <label><input type="checkbox" name="symptom" value="vomiting" /> Vomiting</label>
+              <label><input type="checkbox" name="symptom" value="fatigue" /> Fatigue</label>
+              <label><input type="checkbox" name="symptom" value="sore_throat" /> Sore Throat</label>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Detect</button>
+          </form>
+
+          <div id="symptomResult" class="result hidden">
+            <h4>Possible Conditions</h4>
+            <ul id="resultList"></ul>
+          </div>
+        </div> -->
+      </section>
+
+
+
+
+
+
+      <!-- Records View -->
+
+      <section class="view hidden" id="recordsView">
+        <!-- <div class="card">
+          <h3>My Records</h3>
+          <div id="recordsList">No records yet.</div>
+        </div> -->
+
+        <!-- Records View -->
+
+        <div class="records-card">
+          <h2 class="records-title">📁 My Health Records</h2>
+          <p class="records-subtitle">
+           Your last 5 symptom checks are shown here
+          </p>
+
+          <div id="recordsList" class="records-list">
+            <!-- JS se records yahan inject honge -->
+
+            <!-- Dummy example (JS se remove hoga) -->
+            <!--
+      <div class="record-item">
+        <div class="record-header">
+          <span class="record-name">👤 Rahul</span>
+          <span class="record-date">📅 01 Feb 2026</span>
+        </div>
+        <p class="record-symptom">
+          📝 Bukhar aur headache ho raha hai
+        </p>
+        <span class="record-disease">🦠 Viral Fever</span>
+      </div>
+      -->
+
+          </div>
+
+          <p class="records-note">
+            ℹ️ Only the latest 5 records are saved.
+          </p>
+        </div>
+      </section>
+
+      <!-- Locator View -->
+
+      <section class="view hidden" id="locatorView">
+        <div class="card">
+          <h3>Hospital Locator</h3>
+          <p>Nearby hospitals map will load below (same dashboard).</p>
+          <button class="btn btn-primary" id="openMaps">Show Nearby Hospitals</button>
+
+          <div class="map-wrap hidden" id="mapWrap">
+            <iframe
+              id="mapFrame"
+              title="Hospital Locator Map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=hospitals%20near%20me&output=embed">
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Profile View -->
+
+      <section class="view hidden" id="profileView">
+        <div class="card" id="profileCard">
+          <h3>Profile</h3>
+          <p class="card-desc">Your account details</p>
+
+          <div class="profile-grid">
+            <div>
+              <div class="profile-label">Name</div>
+              <div class="profile-value" id="profileName">-</div>
+            </div>
+            <div>
+              <div class="profile-label">Email</div>
+              <div class="profile-value" id="profileEmail">-</div>
+            </div>
+            <div>
+              <div class="profile-label">Account Created</div>
+              <div class="profile-value" id="profileCreated">-</div>
+            </div>
+            <div>
+              <div class="profile-label">Total Records</div>
+              <div class="profile-value" id="profileRecordsCount">-</div>
+            </div>
+          </div>
+
+          <div class="profile-recent">
+            <div class="profile-label">Recent Records</div>
+            <div id="profileRecent">No records yet.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Medicine View -->
+
+      <section class="view hidden" id="medicineView">
+        <div class="card chat-card">
+          <h3>Doctor Chat</h3>
+          <p class="card-desc">Share your symptoms. I will ask follow-up questions and guide you.</p>
+
+          <div class="chat-window" id="chatWindow">
+            <div class="chat-messages" id="chatMessages"></div>
+          </div>
+
+          <div class="chat-input-wrap">
+            <input id="chatInput" type="text" placeholder="Apni problem likhiye..." />
+            <button class="btn btn-primary" id="chatSend">Send</button>
+          </div>
+
+          <p class="chat-note">Emergency symptoms? Contact a doctor immediately.</p>
+          <p class="chat-note"> Disclaimer: This app provides general health guidance only and is not a substitute for professional medical advice</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Symptom Modal (optional) -->
+
+  <!-- <div id="modalOverlay" class="modal-overlay hidden">
+    <div class="modal">
+      <h3>Quick Symptom Check</h3>
+      <p>Open the symptom checker page to add full details.</p>
+      <div class="modal-actions">
+        <button class="btn" id="modalClose">Close</button>
+        <button class="btn btn-primary" id="modalGo">Go to Symptom Checker</button>
+      </div>
+    </div>
+  </div> -->
+
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
